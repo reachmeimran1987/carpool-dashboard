@@ -111,11 +111,11 @@ if st.button("Export to Excel"):
     df_driver = pd.DataFrame.from_dict(driver_earnings, orient='index', columns=['Earned (₹)'])
     df_settle = pd.DataFrame.from_dict(settlements, orient='index', columns=['Net (₹)'])
 
-    with pd.ExcelWriter("carpool_summary.xlsx", engine='openpyxl') as writer:
+    with pd.ExcelWriter("carpool_summary.py.xlsx", engine='openpyxl') as writer:
         df_attendance.to_excel(writer, sheet_name='Attendance')
         df_quickride.to_excel(writer, sheet_name='QuickRide')
         df_weekly.to_excel(writer, sheet_name='Weekly Totals')
         df_driver.to_excel(writer, sheet_name='Driver Earnings')
         df_settle.to_excel(writer, sheet_name='Settlements')
 
-    st.success("Data exported to carpool_summary.xlsx")
+    st.success("Data exported to carpool_summary.py.xlsx")
